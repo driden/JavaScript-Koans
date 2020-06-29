@@ -11,7 +11,7 @@
 10_about_this.js
 11_about_scope.js
 12_about_functions_and_closure.js
-13_about_regular_expressions.js
-14_about_prototype_chain.js
-15_about_prototypal_inheritance.js
-16_about_reflection.js
+BONUS_1_about_regular_expressions.js
+BONUS_3_about_prototype_chain.js
+BONUS_4_about_prototypal_inheritance.js
+BONUS_2_about_reflection.js
