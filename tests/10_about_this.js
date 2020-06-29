@@ -1,9 +1,9 @@
-describe("About this (topics/10_about_this.js)", () => {
+fdescribe("About this (topics/10_about_this.js)", () => {
   it("'this' inside a method", function () {
     const person = {
       name: "bob",
       intro: function () {
-        return "Hello, my name is " + this.__;
+        return "Hello, my name is " + this.name;
       },
     };
     expect(person.intro()).toEqual(
@@ -23,8 +23,8 @@ describe("About this (topics/10_about_this.js)", () => {
     const alias = person.intro;
 
     // if the function is not called as an object property 'this' is the global context
-    // (window in a browser). This is an example. Please do not do this in practise.
-    window.__ = "Peter";
+    // (global in node). This is an example. Please do not do this in practise.
+    global.globalName = "Peter";
     expect(alias()).toEqual(
       "Hello, my name is Peter",
       "What does 'this' refer to when it is not part of an object?"
@@ -40,7 +40,7 @@ describe("About this (topics/10_about_this.js)", () => {
     };
 
     // calling a function with 'call' lets us assign 'this' explicitly
-    const message = person.intro.call({ __: "Frank" });
+    const message = person.intro.call({ name: "Frank" });
     expect(message).toEqual(
       "Hello, my name is Frank",
       "What does 'this' refer to when you use the 'call()' method?"

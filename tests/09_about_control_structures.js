@@ -1,11 +1,10 @@
-describe("About Control Structures (test/09_about_control_structures.js)", function () {
-
+fdescribe("About Control Structures (test/09_about_control_structures.js)", function () {
   it("if", function () {
     let isPositive = false;
     if (2 > 0) {
       isPositive = true;
     }
-    expect(isPositive).toBe(__, "what is the value of isPositive?");
+    expect(isPositive).toBe(true, "what is the value of isPositive?");
   });
 
   it("for", function () {
@@ -13,7 +12,7 @@ describe("About Control Structures (test/09_about_control_structures.js)", funct
     for (let i = 1; i <= 3; i++) {
       counter = counter + i;
     }
-    expect(counter).toBe(__, "what is the value of counter?");
+    expect(counter).toBe(16, "what is the value of counter?");
   });
 
   it("for in", function () {
@@ -28,15 +27,15 @@ describe("About Control Structures (test/09_about_control_structures.js)", funct
       result = result + property_name;
     }
 
-    expect(result).toBe(__, "what is the value of result?");
+    expect(result).toBe("nameage", "what is the value of result?");
   });
 
   it("ternary operator", function () {
     let fruit = true ? "apple" : "orange";
-    expect(fruit).toBe(__, "what is the value of fruit?");
+    expect(fruit).toBe("apple", "what is the value of fruit?");
 
     fruit = false ? "apple" : "orange";
-    expect(fruit).toBe(__, "now what is the value of fruit?");
+    expect(fruit).toBe("orange", "now what is the value of fruit?");
   });
 
   it("switch", function () {
@@ -49,7 +48,7 @@ describe("About Control Structures (test/09_about_control_structures.js)", funct
         result = 2;
         break;
     }
-    expect(result).toBe(__, "what is the value of result?");
+    expect(result).toBe(2, "what is the value of result?");
   });
 
   it("switch default case", function () {
@@ -65,11 +64,11 @@ describe("About Control Structures (test/09_about_control_structures.js)", funct
         result = "Merry";
         break;
     }
-    expect(result).toBe(__, "what is the value of result?");
+    expect(result).toBe("Merry", "what is the value of result?");
   });
 
   it("null coalescing", function () {
     let result = null || "a value";
-    expect(result).toBe(__, "what is the value of result?");
+    expect(result).toBe("a value", "what is the value of result?");
   });
 });
