@@ -1,4 +1,4 @@
-fdescribe("About Control Structures (test/09_about_control_structures.js)", function () {
+describe("About Control Structures (test/09_about_control_structures.js)", function () {
   it("if", function () {
     let isPositive = false;
     if (2 > 0) {

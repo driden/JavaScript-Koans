@@ -19,6 +19,6 @@ describe("About Scope (topics/11_about_scope.js)", () => {
     })();
 
     expect("outer").toBe(outerVariable, "is outerVariable defined in this scope?");
-    expext(undefined).toBe(typeof innerVariable, "is innerVariable defined in this scope?");
+    expect("undefined").toBe(typeof innerVariable, "is innerVariable defined in this scope?");
   });
 });
