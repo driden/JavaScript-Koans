@@ -1,7 +1,7 @@
 describe("About Scope (topics/11_about_scope.js)", () => {
   thisIsAGlobalVariable = 77;
 
-  test("global variables", function () {
+  it("global variables", function () {
     equal(
       __,
       thisIsAGlobalVariable,
@@ -9,7 +9,7 @@ describe("About Scope (topics/11_about_scope.js)", () => {
     );
   });
 
-  test("variables declared inside of a function", function () {
+  it("variables declared inside of a function", function () {
     let outerVariable = "outer";
 
     // this is a self-invoking function. Notice that it calls itself at the end ().

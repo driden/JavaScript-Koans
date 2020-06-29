@@ -1,28 +1,28 @@
-describe("About Arrays (tests/05_about_arrays.js)", function () {
+fdescribe("About Arrays (tests/05_about_arrays.js)", function () {
   it("array lfiteral syntax and indexing", function () {
     // note that array elements do not have to be of the same type
     var favouriteThings = ["cellar door", 42, true];
-    expect(__).toBe(
+    expect("cellar door").toBe(
       favouriteThings[0],
       "what is in the first position of the array?"
     );
-    expect( __).toBe(
+    expect(42).toBe(
       favouriteThings[1],
       "what is in the second position of the array?"
     );
-    expect( __).toBe(
+    expect(true).toBe(
       favouriteThings[2],
       "what is in the third position of the array?"
     );
   });
 
   it("array type", function () {
-    expect(__).toBe(typeof [], "what is the type of an array?");
+    expect("object").toBe(typeof [], "what is the type of an array?");
   });
 
   it("length", function () {
     var collection = ["a", "b", "c"];
-    expect( __).toBe(
+    expect(3).toBe(
       collection.length,
       "what is the length of the collection array?"
     );
@@ -38,7 +38,7 @@ describe("About Arrays (tests/05_about_arrays.js)", function () {
       "Saturday",
       "Sunday",
     ];
-    var workingWeek = daysOfWeek.splice(__, __);
+    var workingWeek = daysOfWeek.splice(0, 5);
     var weekend = daysOfWeek;
 
     expect(
@@ -58,14 +58,12 @@ describe("About Arrays (tests/05_about_arrays.js)", function () {
     stack.push("first");
     stack.push("second");
 
-    expect(
-      __).toBe(
+    expect("second").toBe(
       stack.pop(),
       "what will be the first value popped off the stack?"
     );
 
-    expect(
-      __).toBe(
+    expect("first").toBe(
       stack.pop(),
       "what will be the second value popped off the stack?"
     );
@@ -77,7 +75,7 @@ describe("About Arrays (tests/05_about_arrays.js)", function () {
     queue.push("second");
     queue.unshift("third");
 
-    expect(__).toBe( queue.shift(), "what will be shifted out first?");
-    expect(__).toBe( queue.shift(), "what will be shifted out second?");
+    expect("third").toBe( queue.shift(), "what will be shifted out first?");
+    expect("first").toBe( queue.shift(), "what will be shifted out second?");
   });
 });
