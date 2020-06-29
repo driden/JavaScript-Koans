@@ -1,0 +1,110 @@
+0  - [x] https://www.hackerrank.com/challenges/js10-hello-world/problem 
+1  - [x] https://www.hackerrank.com/challenges/js10-data-types/problem
+2  - [x] https://www.hackerrank.com/challenges/js10-loops/problem
+   - [x] https://www.hackerrank.com/challenges/js10-count-objects/problem
+3  - [ ] https://www.hackerrank.com/challenges/js10-regexp-1 // es dificil
+4  - [x] https://www.hackerrank.com/challenges/js10-try-catch-and-finally
+6  - [x] ReverseAnArray
+7  - [x] https://www.hackerrank.com/challenges/simple-array-sum/problem
+8  - [x] https://www.hackerrank.com/challenges/compare-the-triplets
+9  - [x] https://www.hackerrank.com/challenges/js10-count-objects/problem
+10 - [x] https://www.hackerrank.com/challenges/js10-class
+11 - [x] https://www.hackerrank.com/challenges/js10-create-a-button
+
+==================================================
+2 Solution:
+==================================================
+function vowelsAndConsonants(s) {
+ let vowels_s = [];
+ let consonants_s = [];
+
+ const vowels=['a','e','i','o','u'];
+
+ for(let i = 0; i < s.length; i++ )    
+ {
+     let c = s.charAt(i)
+     if(vowels.indexOf(c) !==-1)
+     {
+        vowels_s.push(c);
+     }
+     else{
+         consonants_s.push(c);
+     }
+ }
+ for(let i = 0; i< vowels_s.length; i++){
+    console.log(vowels_s[i]);
+ }
+ for(let i = 0; i< consonants_s.length; i++){
+    console.log(consonants_s[i]);
+ }
+
+==================================================
+3 Solution
+==================================================
+function regexVar() {
+    const re = /^([aeiou])[a-z]+\1$/
+    return re;
+}
+
+==================================================
+6 Solution
+==================================================
+const reverse = (arr) =>{
+    let res = [];
+  for(let i = arr.length; i > -1; i--){
+     res.push(arr[i])
+  }…
+
+==================================================
+8 Solution
+==================================================
+// Complete the compareTriplets function below.
+function compareTriplets(a, b) {
+    let res = [0,0];
+    for (let i = 0 ; i<3 ; i++){
+        if (a[i] > b[i]){
+            res[0]+=1
+        }else if (b[i] > a[i]){
+            res[1]+=1
+        }
+    }
+    return res;
+}
+
+==================================================
+9 Solution
+==================================================
+function getCount(objects) {
+   return objects.reduce((accum,val)=>{
+       const {x, y} = val;
+       return (x == y) ? accum + 1: accum;
+   },0);
+
+==================================================
+9 Solution
+==================================================
+class Polygon {
+    constructor(sides){
+        this.sides = sides;
+    }
+
+    perimeter(){
+        return this.sides.reduce((acc,val)=> (val+acc), 0)
+    }
+}
+
+==================================================
+10 Solution
+==================================================
+let button = document.createElement('button');
+button.id ='btn';
+button.innerHTML =0
+button.style.width = 96;
+button.style.height = 48;
+button.style.fontSize = 24
+
+button.onclick = function(){
+    this.innerHTML= Number(this.innerHTML) + 1
+}
+
+document.body.appendChild(button)
