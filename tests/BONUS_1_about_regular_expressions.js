@@ -1,4 +1,4 @@
-describe("About Regular Expressions (topics/about_regular_expressions.js)", () => {
+describe("About Regular Expressions (topics/BONUS_1_about_regular_expressions.js)", () => {
 
   it("exec", function () {
     let numberFinder = /(\d).*(\d)/;

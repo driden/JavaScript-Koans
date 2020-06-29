@@ -1,4 +1,4 @@
-describe("About Objects (topics/about_objects.js)", function () {
+describe("About Objects (topics/06_about_objects.js)", function () {
   it("object type", function () {
     const empty_object = {};
     expect(__).toBe(typeof empty_object, "what is the type of an object?");

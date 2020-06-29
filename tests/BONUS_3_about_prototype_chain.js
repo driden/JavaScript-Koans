@@ -1,7 +1,4 @@
-// demonstrate objects prototype chain
-
-// https://developer.mozilla.org/en/JavaScript/Guide/Inheritance_and_the_prototype_chain
-describe("About Prototype Chain (topics/about_prototype_chain.js)", function () {
+describe("About Prototype Chain (topics/BONUS_03_about_prototype_chain.js)", function () {
   const father = {
     b: 3,
     c: 4,

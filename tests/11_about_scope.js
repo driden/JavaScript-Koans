@@ -1,4 +1,4 @@
-describe("About Scope (topics/about_scope.js)", () => {
+describe("About Scope (topics/11_about_scope.js)", () => {
   thisIsAGlobalVariable = 77;
 
   test("global variables", function () {

@@ -1,4 +1,4 @@
-describe("About Strings (topics/about_strings.js)", () => {
+describe("About Strings (topics/03_about_strings.js)", () => {
   it("delimiters", function () {
     const singleQuotedString = "apple";
     const doubleQuotedString = "apple";

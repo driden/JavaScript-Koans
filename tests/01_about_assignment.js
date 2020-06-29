@@ -1,11 +1,11 @@
-fdescribe("About Assignment (topics/about_assignment.js)", function () {
+describe("About Assignment (topics/01_about_assignment.js)", function () {
   it("local variables", function () {
-    let temp = 1;
+    let temp = __;
     expect(temp).toBe(1, "Assign a value to the variable temp");
   });
 
   it("local constant", function () {
-    const temp = 1;
+    const temp = __;
     expect(temp).toBe(1, "Assign a value to the variable temp");
   });
 
@@ -16,6 +16,9 @@ fdescribe("About Assignment (topics/about_assignment.js)", function () {
     temp = 1;
   }
   it("global variables", function () {
-    expect(temp).toBe(1, "global variables are assigned to can be used anywhere");
+    expect(temp).toBe(
+      __,
+      "global variables are assigned to the window object"
+    );
   });
 });

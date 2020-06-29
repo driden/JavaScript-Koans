@@ -1,6 +1,4 @@
-// demonstrate the effect of modifying an objects prototype before and after the object is constructed
-
-describe("About Prototypal Inheritance (topics/about_prototypal_inheritance.js)", function () {
+describe("About Prototypal Inheritance (topics/BONUS_4_about_prototypal_inheritance.js)", function () {
   // this 'class' pattern defines a class by its constructor
   let Mammal = function (name) {
     this.name = name;

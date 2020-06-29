@@ -1,4 +1,4 @@
-describe("About Reflection (topics/about_reflection.js)", function () {
+describe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
   function A() {
     this.aprop = "A";
   }

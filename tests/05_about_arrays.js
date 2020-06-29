@@ -1,4 +1,4 @@
-describe("About Arrays (tests/about_arrays.js)", function () {
+describe("About Arrays (tests/05_about_arrays.js)", function () {
   it("array lfiteral syntax and indexing", function () {
     // note that array elements do not have to be of the same type
     var favouriteThings = ["cellar door", 42, true];

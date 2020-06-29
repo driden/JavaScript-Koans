@@ -1,4 +1,4 @@
-describe("About Functions And Closure (topics/about_functions_and_closure.js)", function () {
+describe("About Functions And Closure (topics/12_about_functions_and_closure.js)", function () {
   it("defining functions directly", function () {
     let result = "a";
     function changeResult() {

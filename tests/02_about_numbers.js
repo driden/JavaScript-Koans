@@ -1,4 +1,4 @@
-describe("About Numbers (topics/about_numbers.js)", function () {
+describe("About Numbers (topics/02_about_numbers.js)", function () {
   it("types", function () {
     let typeOfIntegers = typeof 6;
     let typeOfFloats = typeof 3.14159;

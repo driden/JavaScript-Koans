@@ -1,4 +1,4 @@
-describe("About this (topics/about_this.js)", () => {
+describe("About this (topics/10_about_this.js)", () => {
   it("'this' inside a method", function () {
     const person = {
       name: "bob",

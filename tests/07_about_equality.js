@@ -1,4 +1,4 @@
-describe("About expectity (topics/about_expectity.js)", function () {
+describe("About expectity (topics/07_about_expectity.js)", function () {
   it("numeric expectity", function () {
     expect(3 + __).toEqual(7, "");
   });

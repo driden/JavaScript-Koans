@@ -1,4 +1,4 @@
-describe("About Truthyness (topics/about_truthyness.js)", function () {
+describe("About Truthyness (topics/04_about_truthyness.js)", function () {
   it("truthyness of positive numbers", function () {
     const oneIsTruthy = 1 ? true : false;
     expect(__).toEqual(oneIsTruthy, "is one truthy?");

@@ -1,4 +1,4 @@
-describe("About Promises (topics/about_promises.js)", function () {
+describe("About Promises (topics/14_about_promises.js)", function () {
   
   // in order to fix these tests, an implementation for 'createPromise' needs
   // to be provided
