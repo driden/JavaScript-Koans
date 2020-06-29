@@ -4,10 +4,10 @@ describe("About Asserts (topics/about_asserts.js)", function () {
   });
 
   it("not true", function () {
-    expect(__).toBeFalse("what is a false value?");
+    expect(!true).toBeFalse("what is a false value?");
   });
 
   it("equal", function () {
-    expect(__).toBe(1 + 1, "what will satisfy the equal assertion?");
+    expect(2).toBe(1 + 1, "what will satisfy the equal assertion?");
   });
 });
