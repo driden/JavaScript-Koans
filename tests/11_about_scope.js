@@ -2,8 +2,7 @@ describe("About Scope (topics/11_about_scope.js)", () => {
   thisIsAGlobalVariable = 77;
 
   it("global variables", function () {
-    equal(
-      __,
+    expect(77).toBe(
       thisIsAGlobalVariable,
       "is thisIsAGlobalVariable defined in this scope?"
     );
@@ -15,11 +14,11 @@ describe("About Scope (topics/11_about_scope.js)", () => {
     // this is a self-invoking function. Notice that it calls itself at the end ().
     (function () {
       let innerVariable = "inner";
-      expect(__, outerVariable, "is outerVariable defined in this scope?");
-      expect(__, innerVariable, "is innerVariable defined in this scope?");
+      expect("outer").toBe(outerVariable, "is outerVariable defined in this scope?");
+      expect("inner").toBe(innerVariable, "is innerVariable defined in this scope?");
     })();
 
-    equal(__, outerVariable, "is outerVariable defined in this scope?");
-    equal(__, typeof innerVariable, "is innerVariable defined in this scope?");
+    expect("outer").toBe(outerVariable, "is outerVariable defined in this scope?");
+    expext(undefined).toBe(typeof innerVariable, "is innerVariable defined in this scope?");
   });
 });
