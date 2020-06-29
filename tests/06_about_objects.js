@@ -1,13 +1,13 @@
 describe("About Objects (topics/06_about_objects.js)", function () {
   it("object type", function () {
     const empty_object = {};
-    expect(__).toBe(typeof empty_object, "what is the type of an object?");
+    expect("object").toBe(typeof empty_object, "what is the type of an object?");
   });
 
   it("object literal notation", function () {
     const person = {
-      __: __,
-      __: __,
+      name: "Amory Blaine",
+      age: 102,
     };
 
     expect("Amory Blaine").toEqual(person.name, "what is the person's name?");
@@ -16,8 +16,8 @@ describe("About Objects (topics/06_about_objects.js)", function () {
 
   it("dynamically adding properties", function () {
     let person = {};
-    person.__ = "Amory Blaine";
-    person.__ = 102;
+    person.name = "Amory Blaine";
+    person.age = 102;
 
     expect("Amory Blaine").toEqual(person.name, "what is the person's name?");
     expect(102).toEqual(person.age, "what is the person's age?");
@@ -25,8 +25,8 @@ describe("About Objects (topics/06_about_objects.js)", function () {
 
   it("adding properties from strings", function () {
     let person = {};
-    person["__"] = "Amory Blaine";
-    person["__"] = 102;
+    person["name"] = "Amory Blaine";
+    person["age"] = 102;
 
     expect("Amory Blaine").toEqual(person.name, "what is the person's name?");
     expect(102).toEqual(person.age, "what is the person's age?");
@@ -37,7 +37,7 @@ describe("About Objects (topics/06_about_objects.js)", function () {
       name: "Amory Blaine",
       age: 102,
       toString: function () {
-        return __; // HINT: use the 'this' keyword to refer to the person object.
+        return "I " + this.name + " am " + this.age + " years old."; // HINT: use the 'this' keyword to refer to the person object.
       },
     };
 
