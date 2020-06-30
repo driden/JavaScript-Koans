@@ -1,4 +1,4 @@
-describe("About Functions And Closure (topics/12_about_functions_and_closure.js)", function () {
+fdescribe("About Functions And Closure (topics/12_about_functions_and_closure.js)", function () {
   it("defining functions directly", function () {
     let result = "a";
     function changeResult() {
@@ -6,14 +6,14 @@ describe("About Functions And Closure (topics/12_about_functions_and_closure.js)
       result = "b";
     }
     changeResult();
-    equal(__, result, "what is the value of result?");
+    expect("b").toBe(result, "what is the value of result?");
   });
 
   it("assigning functions to letiables", function () {
     const triple = function (input) {
       return input * 3;
     };
-    equal(__, triple(4), "what is triple 4?");
+    expect(12).toBe(triple(4), "what is triple 4?");
   });
 
   it("self invoking functions", function () {
@@ -22,26 +22,22 @@ describe("About Functions And Closure (topics/12_about_functions_and_closure.js)
     // self invoking functions are used to provide scoping and to alias letiables
     (function (pv) {
       let secretValue = "password";
-      equal(__, pv, "what is the value of pv?");
-      equal(
-        "__",
+      expect("shared").toBe(pv, "what is the value of pv?");
+      expect("string").toBe(
         typeof secretValue,
         "is secretValue available in this context?"
       );
-      equal(
-        "__",
+      expect("string").toBe(
         typeof publicValue,
         "is publicValue available in this context?"
       );
     })(publicValue);
 
-    equal(
-      "__",
+    expect("undefined").toBe(
       typeof secretValue,
       "is secretValue available in this context?"
     );
-    equal(
-      "__",
+    expect("string").toBe(
       typeof publicValue,
       "is publicValue available in this context?"
     );
@@ -51,14 +47,13 @@ describe("About Functions And Closure (topics/12_about_functions_and_closure.js)
     let add = function () {
       let total = 0;
       for (let i = 0; i < arguments.length; i++) {
-        // complete the implementation of this method so that it returns the sum of its arguments
-        // __
+        total+=arguments[i];
       }
-      // __
+      return total;
     };
 
-    equal(15, add(1, 2, 3, 4, 5), "add 1,2,3,4,5");
-    equal(9, add(4, 7, -2), "add 4,7,-2");
+    expect(15).toEqual(add(1, 2, 3, 4, 5), "add 1,2,3,4,5");
+    expect(9).toEqual(add(4, 7, -2), "add 4,7,-2");
   });
 
   it("using call to invoke function", function () {
@@ -72,7 +67,7 @@ describe("About Functions And Closure (topics/12_about_functions_and_closure.js)
     //function, and the arguments to be sent to the function,multiple arguments are separated by commas.
     let result = invokee.call("I am this!", "Where did it come from?");
 
-    equal(__, result, "what will the value of invokee's this be?");
+    expect("I am this!Where did it come from?").toBe(result, "what will the value of invokee's this be?");
   });
 
   it("using apply to invoke function", function () {
@@ -85,6 +80,6 @@ describe("About Functions And Closure (topics/12_about_functions_and_closure.js)
     //function and the second is the array of arguments to be passed into the called function.
     let result = invokee.apply("I am this!", ["I am arg1", "I am arg2"]);
 
-    equal(__, result, "what will the value of invokee's this be?");
+    expect("I am this!I am arg1I am arg2", result, "what will the value of invokee's this be?");
   });
 });
