@@ -1,16 +1,16 @@
-describe("About Regular Expressions (topics/BONUS_1_about_regular_expressions.js)", () => {
-
+fdescribe("About Regular Expressions (topics/BONUS_1_about_regular_expressions.js)", () => {
   it("exec", function () {
     let numberFinder = /(\d).*(\d)/;
     let results = numberFinder.exec("what if 6 turned out to be 9?");
-    expect(results.equalTo([__, __, __])).toBeTrue(
+    console.log(results);
+    expect(results).toBe(["6 turned out to be 9", "6", "9"],
       "what is the value of results?"
     );
   });
 
   it("it", function () {
-    let containsSelect = /select/.it("  select * from users ");
-    expect(__).toBe(
+    let containsSelect = /select/.test("select * from users ");
+    expect(true).toBe(
       containsSelect,
       'does the string provided contain "select"?'
     );
@@ -18,18 +18,21 @@ describe("About Regular Expressions (topics/BONUS_1_about_regular_expressions.js
 
   it("match", function () {
     let matches = "what if 6 turned out to be 9?".match(/(\d)/g);
-    expect(matches).toEqual([__, __], "what is the value of matches?");
+    expect(matches).toEqual(["6", "9"], "what is the value of matches?");
   });
 
   it("replace", function () {
     let pie = "apple pie".replace("apple", "strawberry");
-    expect(__).toBe(pie, "what is the value of pie?");
+    expect("strawberry pie").toBe(pie, "what is the value of pie?");
 
     pie = "what if 6 turned out to be 9?".replace(/\d/g, function (number) {
       // the second parameter can be a string or a function
       let map = { "6": "six", "9": "nine" };
       return map[number];
     });
-    expect(__).toBe(pie, "what is the value of pie?");
+    expect("what if six turned out to be nine?").toBe(
+      pie,
+      "what is the value of pie?"
+    );
   });
 });
