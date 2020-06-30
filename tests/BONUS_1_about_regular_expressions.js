@@ -1,9 +1,9 @@
-fdescribe("About Regular Expressions (topics/BONUS_1_about_regular_expressions.js)", () => {
+describe("About Regular Expressions (topics/BONUS_1_about_regular_expressions.js)", () => {
   it("exec", function () {
     let numberFinder = /(\d).*(\d)/;
     let results = numberFinder.exec("what if 6 turned out to be 9?");
-    console.log(results);
-    expect(results).toBe(["6 turned out to be 9", "6", "9"],
+    expect(results.slice(0, 3)).toEqual(
+      ["6 turned out to be 9", "6", "9"],
       "what is the value of results?"
     );
   });
