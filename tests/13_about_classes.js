@@ -1,4 +1,4 @@
-describe("About Prototypal Inheritance (topics/about_prototypal_inheritance.js)", function () {
+fdescribe("About Prototypal Inheritance (topics/about_prototypal_inheritance.js)", function () {
   class User {
     constructor(name, password) {
       this.name = name;
@@ -7,6 +7,10 @@ describe("About Prototypal Inheritance (topics/about_prototypal_inheritance.js)"
 
     greet() {
       return "Hello, my name is " + this.name;
+    }
+
+    changePassword(newPass) {
+      this.password = newPass;
     }
   }
 
@@ -20,13 +24,14 @@ describe("About Prototypal Inheritance (topics/about_prototypal_inheritance.js)"
     }
 
     static role = "Admin";
+    static administrate = () => "Administrating...";
   }
 
   const eric = new User("Eric", "password");
   const john = new Administrator("John", "hardpassword");
 
   it("defining a 'User' class", function () {
-    expect(__).toBe(eric.greet(), "what will Eric say?");
+    expect("Hello, my name is Eric").toBe(eric.greet(), "what will Eric say?");
   });
 
   it("can change a user's password", function () {
@@ -39,23 +44,23 @@ describe("About Prototypal Inheritance (topics/about_prototypal_inheritance.js)"
   });
 
   it("Administrator Inherits the User class", function () {
-    expect(__).toBe(eric instanceof User);
-    expect(__).toBe(eric instanceof Administrator);
-    expect(__).toBe(john instanceof User);
-    expect(__).toBe(john instanceof Administrator);
+    expect(true).toBe(eric instanceof User);
+    expect(false).toBe(eric instanceof Administrator);
+    expect(true).toBe(john instanceof User);
+    expect(true).toBe(john instanceof Administrator);
   });
 
   it("`greet` is polymorphic", function () {
-    expect(__).toBe(john.greet(), "what will John say?");
+    expect("Hello, my name is John and I'm an admin").toBe(john.greet(), "what will John say?");
   });
 
   it('a class can have a "shared" field', function () {
-    expect("Admin").toBe(__, "What do all Administrators have in common?");
+    expect("Admin").toBe(Administrator.role, "What do all Administrators have in common?");
   });
 
   it('a class can have a "shared" method', function () {
     expect("Administrating...").toBe(
-      Administrator.__,
+      Administrator.administrate(),
       "https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes/static"
     );
   });
