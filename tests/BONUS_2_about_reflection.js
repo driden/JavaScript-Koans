@@ -1,4 +1,4 @@
-fdescribe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
+describe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
   class A {
     constructor() {
       this.aprop = "A";

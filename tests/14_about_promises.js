@@ -5,9 +5,9 @@ describe("About Promises (topics/14_about_promises.js)", function () {
   const createPromise = function (shouldResolve) {
     return new Promise((resolve, reject) => {
       if (shouldResolve) {
-        resolve();
+        resolve('yay');
       } else {
-        reject();
+        reject('nay');
       }
     });
   }
@@ -19,17 +19,11 @@ describe("About Promises (topics/14_about_promises.js)", function () {
 
   it("a promise should take a function as a parameter", function () {
     const myProm = createPromise(true);
-    expect(myProm.length).toBe(1);
-  });
-
-  it("a new promise has a 'pending' state", function () {
-    const myProm = createPromise(true);
-    expect('pending').toBe(myProm.state, "what should the state be?");
+    expect(myProm.constructor.length).toBe(1);
   });
 
   it("a promise can be 'resolved' to 'yay'", async function () {
     const myProm = createPromise(true);
-
     await expectAsync(myProm).toBeResolvedTo("yay");
   });
 
