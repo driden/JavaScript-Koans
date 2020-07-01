@@ -1,0 +1,23 @@
+{
+  "name": "jsbasics",
+  "version": "1.0.0",
+  "description": "A fork of <> for learning the basics of javascript",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jasmine --reporter=jasmine-console-reporter --config=jasmine.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-driden:driden/JavaScript-Koans.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "jasmine": "^3.5.0",
+    "jasmine-console-reporter": "^3.1.0"
+  }
+}
