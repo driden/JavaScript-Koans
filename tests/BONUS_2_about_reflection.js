@@ -1,19 +1,22 @@
-describe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
-  function A() {
-    this.aprop = "A";
+fdescribe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
+  class A {
+    constructor() {
+      this.aprop = "A";
+    }
   }
 
-  function B() {
-    this.bprop = "B";
+  class B extends A {
+    constructor() {
+      super();
+      this.bprop = "B";
+    }
   }
-
-  B.prototype = new A();
 
   it("typeof", function () {
-    expect(__).toEqual(typeof {}, "what is the type of an empty object?");
-    expect(__).toEqual(typeof "apple", "what is the type of a string?");
-    expect(__).toEqual(typeof -5, "what is the type of -5?");
-    expect(__).toEqual(typeof false, "what is the type of false?");
+    expect("object").toEqual(typeof {}, "what is the type of an empty object?");
+    expect("string").toEqual(typeof "apple", "what is the type of a string?");
+    expect("number").toEqual(typeof -5, "what is the type of -5?");
+    expect("boolean").toEqual(typeof false, "what is the type of false?");
   });
 
   it("property enumeration", function () {
@@ -25,25 +28,27 @@ describe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
       values.push(person[propertyName]);
     }
     expect(keys).toEqual(
-      ["__", "__", "__"],
+      ["name", "age", "unemployed"],
       "what are the property names of the object?"
     );
     expect(values).toEqual(
-      ["__", __, __],
+      ["Amory Blaine", 102, true],
       "what are the property values of the object?"
     );
   });
 
   it("hasOwnProperty", function () {
     let b = new B();
-    let propertyName;
-
     let keys = [];
-    for (propertyName in b) {
+
+    for (let propertyName in b) {
       keys.push(propertyName);
     }
-    expect(__).toEqual(keys.length, "how many elements are in the keys array?");
-    expect([__, __]).toBe(keys, "what are the properties of the array?");
+    expect(2).toEqual(keys.length, "how many elements are in the keys array?");
+    expect(["aprop", "bprop"]).toEqual(
+      keys,
+      "what are the properties of the array?"
+    );
 
     // hasOwnProperty returns true if the parameter is a property directly on the object,
     // but not if it is a property accessible via the prototype chain.
@@ -53,25 +58,28 @@ describe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
         ownKeys.push(propertyName);
       }
     }
-    expect(__).toEqual(
+    expect(2).toEqual(
       ownKeys.length,
       "how many elements are in the ownKeys array?"
     );
-    expect([__]).toBe(ownKeys, "what are the own properties of the array?");
+    expect(["aprop", "bprop"]).toEqual(
+      ownKeys,
+      "what are the own properties of the array?"
+    );
   });
 
   it("constructor property", function () {
     const a = new A();
     const b = new B();
-    expect(__).toEqual(
+    expect("function").toEqual(
       typeof a.constructor,
       "what is the type of a's constructor?"
     );
-    expect(__).toEqual(
+    expect("A").toEqual(
       a.constructor.name,
       "what is the name of a's constructor?"
     );
-    expect(__).toEqual(
+    expect("B").toEqual(
       b.constructor.name,
       "what is the name of b's constructor?"
     );
@@ -81,6 +89,6 @@ describe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
     // eval executes a string
     let result = "";
     eval("result = 'apple' + ' ' + 'pie'");
-    expect(__).toBe(result, "what is the value of result?");
+    expect("apple pie").toBe(result, "what is the value of result?");
   });
 });
