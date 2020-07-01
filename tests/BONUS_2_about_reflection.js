@@ -1,13 +1,16 @@
 describe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
-  function A() {
-    this.aprop = "A";
+  class A {
+    constructor() {
+      this.aprop = "A";
+    }
   }
 
-  function B() {
-    this.bprop = "B";
+  class B extends A {
+    constructor() {
+      super();
+      this.bprop = "B";
+    }
   }
-
-  B.prototype = new A();
 
   it("typeof", function () {
     expect(__).toEqual(typeof {}, "what is the type of an empty object?");
@@ -43,7 +46,7 @@ describe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
       keys.push(propertyName);
     }
     expect(__).toEqual(keys.length, "how many elements are in the keys array?");
-    expect([__, __]).toBe(keys, "what are the properties of the array?");
+    expect([__, __]).toEqual(keys, "what are the properties of the array?");
 
     // hasOwnProperty returns true if the parameter is a property directly on the object,
     // but not if it is a property accessible via the prototype chain.
@@ -57,7 +60,7 @@ describe("About Reflection (topics/BONUS_2_about_reflection.js)", function () {
       ownKeys.length,
       "how many elements are in the ownKeys array?"
     );
-    expect([__]).toBe(ownKeys, "what are the own properties of the array?");
+    expect([__]).toEqual(ownKeys, "what are the own properties of the array?");
   });
 
   it("constructor property", function () {
